@@ -4,12 +4,12 @@ WORKDIR /usr/app
 
 COPY . .
 
-RUN go build -v -o ./server
+RUN go build -v -o ./main
 
 FROM scratch
 
 COPY --from=build /usr/app /usr/app
 
-CMD [ "/usr/app/server" ]
+CMD [ "/usr/app/main" ]
 
 
